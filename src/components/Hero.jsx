@@ -29,11 +29,12 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
+      
     </section>
     </div>
   );
 };
-// 
+// <WednesdayCanvas/>
+// <ComputersCanvas />
 // <HandCanvas/>
 export default Hero;
