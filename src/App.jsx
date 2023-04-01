@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {
   About,
@@ -33,22 +33,21 @@ function App() {
   return (
     <BrowserRouter>
       <div className="relative z-o bg-primary snap-y snap-mandatory scroll-smooth overflow-auto scrollbar-hide snap-center">
-        <div className="h-[100vh] bg-[#339941] h-100 bg-cover bg-no-repeat bg-center">
           <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-o">
-          <Contact />
-          <StarsCanvas />
-        </div>
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<Experience />}/>
+          </Routes>
       </div>
     </BrowserRouter>
   );
 }
-
+        // <Tech />
+        // <Works />
+        // <Feedbacks />
+        // <div className="relative z-o">
+        //   <Contact />
+        //   <StarsCanvas />
+        // </div>
 export default App;

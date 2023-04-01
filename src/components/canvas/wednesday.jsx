@@ -18,7 +18,8 @@ const Wednesday = ({ isMobile }) => {
         penumbra={1}
         intensity={1}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={1024
+        }
       />
       <spotLight
         position={[20, -50, 10]}
@@ -56,7 +57,7 @@ const WednesdayCanvas = () => {
 
     // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
-
+    console.log(mediaQuery);
     // Remove the listener when the component is unmounted
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
