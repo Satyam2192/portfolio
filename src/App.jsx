@@ -1,53 +1,67 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import {
-  About,
-  Contact,
-  Experience,
-  Feedbacks,
-  Hero,
-  Navbar,
-  Tech,
-  Works,
-  StarsCanvas,
-} from "./components";
-// import styled from "styled-components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
-// =========
-// const Container = styled.div`
-//   scroll-snap-type: y mandatory;
-//   scroll-behavior: smooth;
-//   overflow-y: auto;
-//   scrollbar-width: none;
-//   &::-webkit-scrollbar{
-//     display: none;
-// bg-[#663399]
-//   }
-// `;
-// =====
-
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-o bg-primary snap-y snap-mandatory scroll-smooth overflow-auto scrollbar-hide snap-center">
+      <div className='relative z-0 bg-primary'>
+        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Hero />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Experience />}/>
-          </Routes>
+          <Hero />
+        </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className='relative z-0'>
+          <Contact />
+          <StarsCanvas />
+        </div>
       </div>
     </BrowserRouter>
   );
 }
-        // <Tech />
-        // <Works />
-        // <Feedbacks />
-        // <div className="relative z-o">
-        //   <Contact />
-        //   <StarsCanvas />
-        // </div>
+
 export default App;
+
+
+
+
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// import {
+//   About,
+//   Contact,
+//   Experience,
+//   Feedbacks,
+//   Hero,
+//   Navbar,
+//   Tech,
+//   Works,
+//   StarsCanvas,
+// } from "./components";
+// // all styles className="relative z-0 bg-primary"
+
+// const App = () => {
+//   return (
+//     <BrowserRouter>
+//       <Navbar />
+//       <Routes >
+//         <Route path="/" element={<Hero />} />
+//         <Route path="/about" element={<About />} />
+//         <Route path="/experience" element={<Experience />} />
+//         <Route path="/tech" element={<Tech />} />
+//         <Route path="/works" element={<Works />} />
+//         <Route path="/feedbacks" element={<Feedbacks />} />
+//         <Route path="/contact" element={<Contact />} />
+
+        
+//       </Routes>
+//       <StarsCanvas className="relative z-0" />
+//     </BrowserRouter>
+//   );
+// };
+
+// export default App;
