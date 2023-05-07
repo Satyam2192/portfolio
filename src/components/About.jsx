@@ -8,6 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { Tilt } from "react-tilt";
 import HandCanvas from "./canvas/hand";
 import { slideIn } from "../utils/motion";
+import { StarsCanvas } from "./canvas";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className=" xs:w-[250px] w-full ">
@@ -66,6 +67,7 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+      <StarsCanvas />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BallCanvas } from './canvas'
+import { BallCanvas, StarsCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 import { technologies } from '../constants'
 
@@ -11,7 +11,9 @@ const Tech = () => {
           <BallCanvas icon={technology.icon}/>
         </div>
       ))}
+      <StarsCanvas/>
     </div>
+    
   )
 }
 

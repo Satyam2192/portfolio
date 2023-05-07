@@ -8,6 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { slideIn } from "../utils/motion";
+import { StarsCanvas } from "./canvas";
 
 
 
@@ -79,8 +80,9 @@ const Works = () => {
       >
         <p className={styles.sectionSubText}>My Works</p>
         <h3 className={styles.sectionHeadText}>Projects.</h3>
+        
       </motion.div>
-
+      
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
@@ -93,6 +95,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
+      <StarsCanvas />
     </>
   );
 };

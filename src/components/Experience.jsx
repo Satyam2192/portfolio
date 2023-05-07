@@ -12,6 +12,7 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 import { slideIn } from "../utils/motion";
+import { StarsCanvas } from "./canvas";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -66,8 +67,9 @@ const Experience = () => {
       >
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h3 className={styles.sectionHeadText}>Work Experience.</h3>
+        
       </motion.div>
-
+      
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
@@ -77,7 +79,9 @@ const Experience = () => {
             />
           ))}
         </VerticalTimeline>
+        
       </div>
+      <StarsCanvas />
     </>
   );
 };
