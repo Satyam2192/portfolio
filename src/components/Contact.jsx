@@ -10,6 +10,10 @@ import EarthHologram from "./canvas/Station";
 import StationCanvas from "./canvas/Station";
 import WednesdayCanvas from "./canvas/wednesday";
 
+// p8_Ed82x5hx2FCGnf
+// template_r8entax
+// service_rkkw474
+
 const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -18,9 +22,41 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send(
+      "service_rkkw474",
+      "template_r8entax",
+      {
+        form_name: form.name,
+        to_name: "Satyam Kumar",
+        form_email: form.email,
+        to_email: "satyam21092@gmail.com",
+        message: form.message,
+      },
+      "p8_Ed82x5hx2FCGnf"
+    )
+    .then(()=>{
+      setLoading(false)
+      alert('Thank you for contacting me. I will get back to you soon.')
+      setForm({
+        name: "",
+        email:"",
+        message:"",
+      }), (error)=>{
+        setLoading(false)
+        console.log(error);
+        alert("Oops, some error has occurred. Please try again later")
+      }
+    })
+  };
 
   return (
     <div
@@ -90,12 +126,8 @@ const Contact = () => {
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <StationCanvas />
-        
-
       </motion.div>
-      
     </div>
-    
   );
 };
 
