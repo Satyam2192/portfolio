@@ -32,9 +32,9 @@ const Hero = () => {
         }}
       >
         <img
-          style={{ width: "100%" }}
           src="https://r4.wallpaperflare.com/wallpaper/751/849/165/space-galaxy-universe-space-art-wallpaper-a930f8fd615aadabe667486f9001b64d.jpg"
           alt="background"
+          className={`relative w-full h-screen mx-auto bg-cover bg-no-repeat bg-center`}
         />
       </Plx>
       <Plx
@@ -61,10 +61,9 @@ const Hero = () => {
         }}
       >
         <img
-          style={{ width: "100%" }}
           src="https://i.postimg.cc/WpXqgK57/bg-3.png"
           alt="foreground"
-          className="object-contain"
+          className={`relative w-full h-screen mx-auto bg-cover bg-no-repeat bg-center`}
         />
       </Plx>
 
