@@ -31,31 +31,33 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs.send(
-      "service_rkkw474",
-      "template_r8entax",
-      {
-        form_name: form.name,
-        to_name: "Satyam Kumar",
-        form_email: form.email,
-        to_email: "satyam21092@gmail.com",
-        message: form.message,
-      },
-      "p8_Ed82x5hx2FCGnf"
-    )
-    .then(()=>{
-      setLoading(false)
-      alert('Thank you for contacting me. I will get back to you soon.')
-      setForm({
-        name: "",
-        email:"",
-        message:"",
-      }), (error)=>{
-        setLoading(false)
-        console.log(error);
-        alert("Oops, some error has occurred. Please try again later")
-      }
-    })
+    emailjs
+      .send(
+        "service_rkkw474",
+        "template_r8entax",
+        {
+          form_name: form.name,
+          to_name: "Satyam Kumar",
+          form_email: form.email,
+          to_email: "satyam21092@gmail.com",
+          message: form.message,
+        },
+        "p8_Ed82x5hx2FCGnf"
+      )
+      .then(() => {
+        setLoading(false);
+        alert("Thank you for contacting me. I will get back to you soon.");
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        }),
+          (error) => {
+            setLoading(false);
+            console.log(error);
+            alert("Oops, some error has occurred. Please try again later");
+          };
+      });
   };
 
   return (
@@ -125,10 +127,12 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        <StationCanvas />
+        
       </motion.div>
     </div>
   );
 };
+
+// <StationCanvas />
 
 export default SectionWrapper(Contact, "");

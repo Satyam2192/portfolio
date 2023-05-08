@@ -66,10 +66,9 @@ const Experience = () => {
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>What I have done so far</p>
-        <h3 className={styles.sectionHeadText}>Work Experience.</h3>
-        
+        <h3 className={styles.sectionHeadText}>My Projects</h3>
       </motion.div>
-      
+
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
@@ -79,7 +78,6 @@ const Experience = () => {
             />
           ))}
         </VerticalTimeline>
-        
       </div>
       <StarsCanvas />
     </>

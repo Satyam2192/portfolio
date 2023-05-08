@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
     mobile,
     backend,
@@ -113,8 +114,8 @@ import {
   
   const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
+      title: "Turu Lav",
+
       icon: starbucks,
       iconBg: "#383E56",
       date: "March 2020 - April 2021",
