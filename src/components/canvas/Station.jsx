@@ -20,7 +20,7 @@ const Station = ({ isMobile }) => {
       <spotLight position={[0, 50, 0]} angle={0.2} penumbra={1} color="#ffff00" intensity={2} />
       <primitive
         object={station.scene}
-        scale={isMobile ? 0.6 : 0.5}
+        scale={isMobile ? 0.5 : 0.45}
         position={isMobile ? [0, 0, 0] : [0, 0, 0]}
         rotation={[0, 0, 0]}
       />

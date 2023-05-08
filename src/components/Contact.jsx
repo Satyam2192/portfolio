@@ -65,12 +65,15 @@ const Contact = () => {
       className="xl:mt-12 xl:flex-row flex-col-reverse 
     flex gap-10 overflow-hidden"
     >
+    
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch with me</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+
+        
 
         <form
           // ref={formRef}
@@ -113,7 +116,7 @@ const Contact = () => {
           rounded-lg outline-none border-none font-medium"
             />
           </label>
-
+          
           <button
             type="submit"
             className="bg-black p-3 rounded-lg hover:bg-primary "
@@ -122,12 +125,12 @@ const Contact = () => {
           </button>
         </form>
       </motion.div>
-      <StationCanvas />
+      
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        
+      <StationCanvas />
       </motion.div>
     </div>
   );
