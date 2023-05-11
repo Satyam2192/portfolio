@@ -114,9 +114,9 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Turu Lav",
+    title: "Code Jam ",
 
-    icon: "https://turuluv.netlify.app/assets/asset%200-72d414fc.png",
+    icon: "https://codejam.sg/wp-content/uploads/2021/01/logo-pic.jpg",
     iconBg: "white",
     date: "March 2020 - April 2021",
     points: [

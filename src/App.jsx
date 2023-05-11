@@ -17,7 +17,7 @@ const App = () => {
         
         <Tech />
         <Works />
-        <Experience />
+        
         <Feedbacks />
         <div className='relative z-0'>
           <Contact />
@@ -30,7 +30,7 @@ const App = () => {
 
 export default App;
 
-
+// <Experience />
 
 
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
