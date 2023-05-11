@@ -3,12 +3,9 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import EarthHologram from "./canvas/Station";
 import StationCanvas from "./canvas/Station";
-import WednesdayCanvas from "./canvas/wednesday";
 
 // p8_Ed82x5hx2FCGnf
 // template_r8entax

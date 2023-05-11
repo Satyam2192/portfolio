@@ -6,7 +6,6 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Tilt } from "react-tilt";
-import HandCanvas from "./canvas/hand";
 import { slideIn } from "../utils/motion";
 import { StarsCanvas } from "./canvas";
 

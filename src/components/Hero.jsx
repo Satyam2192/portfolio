@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import Plx from "react-plx";
 
 import { styles } from "../styles";
-import WednesdayCanvas from "./canvas/wednesday";
 import autoprefixer from "autoprefixer";
 
 const Hero = () => {
