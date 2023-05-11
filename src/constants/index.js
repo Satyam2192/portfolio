@@ -262,28 +262,7 @@ const projects = [
     source_code_link1: "https://github.com/Satyam2192/wev-dev-2/tree/main/React_project/react-food-app",
     source_code_link2: "https://github.com/Satyam2192/wev-dev-2/tree/main/React_project/react-food-app",
   },
-  {
-    name: "Music-playing website",
-    description:
-      "Fully responsive music-playing website with the ability to stream videos and shorts directly from the site. Implemented some user-friendly features and optimized site performance for seamless user experience.",
-    tags: [
-      {
-        name: "Bootstrap",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Flask",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link1: "https://github.com/Satyam2192/projects/tree/main/building%20a%20real%20website%20v2",
-    source_code_link2: "https://github.com/Satyam2192/projects/tree/main/building%20a%20real%20website%20v2",
-  },
+  
 ];
 
 export { services, technologies, experiences, testimonials, projects };
