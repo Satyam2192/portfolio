@@ -39,7 +39,7 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const About = () => {
   return (
-    <>
+    <section className="h-100vh snap-center">
       <div>
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
@@ -67,7 +67,7 @@ const About = () => {
         ))}
       </div>
       <StarsCanvas />
-    </>
+    </section>
   );
 };
 

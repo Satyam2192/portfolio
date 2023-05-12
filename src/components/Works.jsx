@@ -10,8 +10,6 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { slideIn } from "../utils/motion";
 import { StarsCanvas } from "./canvas";
 
-
-
 const ProjectCard = ({
   index,
   name,
@@ -38,19 +36,20 @@ const ProjectCard = ({
           />
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-          
-          <div
+            <div
               onClick={() => window.open(source_code_link1, "_blank")}
               className="bg-[rgb(240,234,234)] w-10 h-10 rounded-full flex justify-center items-center cursor-pointer mr-2"
             >
               <img
-                src={"https://w7.pngwing.com/pngs/929/206/png-transparent-computer-icons-hyperlink-symbol-link-miscellaneous-text-logo.png"}
+                src={
+                  "https://w7.pngwing.com/pngs/929/206/png-transparent-computer-icons-hyperlink-symbol-link-miscellaneous-text-logo.png"
+                }
                 alt="source code"
                 className="w-1/2 h-1/2 object-contain"
               />
             </div>
 
-          <div
+            <div
               onClick={() => window.open(source_code_link2, "_blank")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
@@ -85,16 +84,15 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <>
+    <section className="h-100vh snap-center">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>My Works</p>
         <h3 className={styles.sectionHeadText}>Projects.</h3>
-        
       </motion.div>
-      
+
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
@@ -108,7 +106,7 @@ const Works = () => {
         ))}
       </div>
       <StarsCanvas />
-    </>
+    </section>
   );
 };
 

@@ -7,7 +7,8 @@ import autoprefixer from "autoprefixer";
 const Hero = () => {
   return (
     <section
-      className={`relative w-full h-screen mx-auto bg-cover bg-no-repeat bg-center`}
+      className={`h-[100vh] snap-center
+      relative w-full mx-auto bg-cover bg-no-repeat bg-center`}
     >
       <Plx
         parallaxData={[
@@ -130,37 +131,4 @@ const Hero = () => {
   );
 };
 
-// <WednesdayCanvas />
-
 export default Hero;
-
-// import "./styles.css";
-// import Plx from "react-plx";
-
-// export default function Hero() {
-//   return (
-//     <div>
-//
-//
-//
-//       <div
-//         style={{
-//           position: "fixed",
-//           lefft: 0,
-//           top: 0,
-//           zIndex: 200,
-//           paddingTop: "56%",
-//           height: "400vh",
-//           width: "100%"
-//         }}
-//       >
-//         <div
-//           style={{
-//             background: "#000",
-//             height: "100%"
-//           }}
-//         ></div>
-//       </div>
-//     </div>
-//   );
-// }
