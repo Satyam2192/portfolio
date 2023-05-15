@@ -13,6 +13,18 @@
   color-scheme: dark;
 }
 
+@keyframes lights {
+  0% {
+    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff, #ff0000);
+  }
+  50% {
+    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff, #ff0000);
+  }
+  100% {
+    background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff, #ff0000);
+  }
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

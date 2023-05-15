@@ -3,13 +3,40 @@ import Plx from "react-plx";
 
 import { styles } from "../styles";
 import autoprefixer from "autoprefixer";
+import AnimatedCursor from "react-animated-cursor";
+
+const Cursor = () => {
+  return (
+    <AnimatedCursor
+      innerSize={15}
+      outerSize={15}
+      color="193, 11, 111"
+      outerAlpha={0.2}
+      innerScale={0.7}
+      outerScale={5}
+      clickables={[
+        "a",
+        'input[type="text"]',
+        'input[type="email"]',
+        'input[type="number"]',
+        'input[type="submit"]',
+        'input[type="image"]',
+        "label[for]",
+        "select",
+        "textarea",
+        "button",
+        ".link",
+      ]}
+    />
+  );
+};
 
 const Hero = () => {
   return (
     <section
-      className={`h-[100vh] snap-center
-      relative w-full mx-auto bg-cover bg-no-repeat bg-center`}
+      className={`h-[100vh] snap-center relative w-full mx-auto bg-cover bg-no-repeat bg-center App`}
     >
+      <Cursor />
       <Plx
         parallaxData={[
           {
