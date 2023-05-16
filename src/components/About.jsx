@@ -1,41 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
-import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Tilt } from "react-tilt";
 import { slideIn } from "../utils/motion";
 import { StarsCanvas } from "./canvas";
-
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className=" xs:w-[250px] w-full ">
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
-
-        <h3 className="text-white text-[20px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
 
 const About = () => {
   return (
@@ -62,13 +32,95 @@ const About = () => {
       </div>
 
       <div className="m-4 mt-10 mb-10 justify-center sm:mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+        <motion.div
+          variants={fadeIn("", "", 0.2, 1)}
+          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4"
+        >
+          <Tilt
+            options={{
+              max: 25,
+              scale: 1.1,
+              speed: 500,
+              glare: true,
+              "max-glare": 0.5,
+            }}
+            className="w-full h-full"
+          >
+            <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-8 flex flex-col justify-center items-center">
+              <i className="fas fa-rocket text-white text-4xl mb-4"></i>
+              <img
+                src="https://svgshare.com/i/tA9.svg"
+                alt="logo"
+                className="bg-none"
+              />
+              <h3 className="text-white text-lg font-bold mb-2 mt-4">
+                Web Developer
+              </h3>
+              <p className="text-white text-sm text-center">
+                Experience the future with our cutting-edge designs.
+              </p>
+            </div>
+          </Tilt>
+        </motion.div>
+
+        <motion.div
+          variants={fadeIn("", "", 0.2, 1)}
+          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4"
+        >
+          <Tilt
+            options={{
+              max: 25,
+              scale: 1.1,
+              speed: 500,
+              glare: true,
+              "max-glare": 0.5,
+            }}
+            className="w-full h-full"
+          >
+            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-green-500 rounded-2xl p-8 flex flex-col justify-center items-center">
+              <i className="fas fa-palette text-white text-4xl mb-4"></i>
+              <img src="https://www.svgrepo.com/show/353515/browserstack.svg" alt="logo" />
+              <h3 className="text-white text-lg font-bold mb-2 mt-4">
+                backend Developer
+              </h3>
+              <p className="text-white text-sm text-center">
+                Experience the future with our unique features.
+              </p>
+            </div>
+          </Tilt>
+        </motion.div>
+
+        <motion.div
+          variants={fadeIn("", "", 0.2, 1)}
+          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4"
+        >
+          <Tilt
+            options={{
+              max: 25,
+              scale: 1.1,
+              speed: 500,
+              glare: true,
+              "max-glare": 0.5,
+            }}
+            className="w-full h-full"
+          >
+            <div className="w-full h-full bg-gradient-to-br from-yellow-500 to-red-500 rounded-2xl p-8 flex flex-col justify-center items-center">
+              <i className="fas fa-palette text-white text-4xl mb-4"></i>
+              <img src="https://www.svgrepo.com/show/439290/react.svg" alt="logo" />
+              <h3 className="text-white text-lg font-bold mb-2 mt-4">
+                React Developer
+              </h3>
+              <p className="text-white text-sm text-center">
+                Experience the future with our React Development.
+              </p>
+            </div>
+          </Tilt>
+        </motion.div>
       </div>
       <StarsCanvas />
     </section>
   );
 };
+
 
 export default SectionWrapper(About, "about");
