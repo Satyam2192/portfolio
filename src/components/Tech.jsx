@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StarsCanvas, BallCanvas } from "./canvas";
+import { StarsCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { Canvas } from "@react-three/fiber";
@@ -41,9 +41,10 @@ const Tech = () => {
       <div className="flex flex-row flex-wrap justify-center gap-10 relative">
         {technologies.map((technology) => (
           <div className="w-28 h-28" key={technology.name}>
-            <BallCanvas icon={technology.icon} />
+            <img src={technology.icon} alt={technology.name} />
           </div>
         ))}
+
         <StarsCanvas />
       </div>
     </section>
