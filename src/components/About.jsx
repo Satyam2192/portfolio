@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -7,13 +7,27 @@ import { Tilt } from "react-tilt";
 import { slideIn } from "../utils/motion";
 import { StarsCanvas } from "./canvas";
 
+
+
 const About = () => {
+  const [cursorPos, setCursorPos] = useState({ x: 100, y: 100 });
+
+  useEffect(() => {
+    const onMouseMove = (e) => {
+      setCursorPos({ x: e.clientX, y: e.clientY });
+    };
+    document.addEventListener("mousemove", onMouseMove);
+    return () => {
+      document.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
+
   return (
     <section className="h-100vh snap-center">
       <div>
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+          className="flex-[0.75] bg-gradient-to-br from-purple-500 to-pink-500 p-8 rounded-2xl"
         >
           <p className={styles.sectionSubText}>INTRODUCTION</p>
           <h3 className={styles.sectionHeadText}>Overview.</h3>
@@ -46,7 +60,12 @@ const About = () => {
             }}
             className="w-full h-full"
           >
-            <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-8 flex flex-col justify-center items-center">
+            <div
+              className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-8 flex flex-col justify-center items-center"
+              style={{
+                background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 255, 0.5))`,
+              }}
+            >
               <i className="fas fa-rocket text-white text-4xl mb-4"></i>
               <img
                 src="https://svgshare.com/i/tA9.svg"
@@ -77,11 +96,20 @@ const About = () => {
             }}
             className="w-full h-full"
           >
-            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-green-500 rounded-2xl p-8 flex flex-col justify-center items-center">
-              <i className="fas fa-palette text-white text-4xl mb-4"></i>
-              <img src="https://www.svgrepo.com/show/353515/browserstack.svg" alt="logo" />
+            <div
+              className="w-full h-full bg-gradient-to-br  from-blue-500 to-green-500 rounded-2xl p-8 flex flex-col justify-center items-center"
+              style={{
+                background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 255, 0.5))`,
+              }}
+            >
+              <i className="fas fa-rocket text-white text-4xl mb-4"></i>
+              <img
+                src="https://www.svgrepo.com/show/353515/browserstack.svg"
+                alt="logo"
+                className="bg-none"
+              />
               <h3 className="text-white text-lg font-bold mb-2 mt-4">
-                backend Developer
+                Backend Developer
               </h3>
               <p className="text-white text-sm text-center">
                 Experience the future with our unique features.
@@ -104,9 +132,18 @@ const About = () => {
             }}
             className="w-full h-full"
           >
-            <div className="w-full h-full bg-gradient-to-br from-yellow-500 to-red-500 rounded-2xl p-8 flex flex-col justify-center items-center">
-              <i className="fas fa-palette text-white text-4xl mb-4"></i>
-              <img src="https://www.svgrepo.com/show/439290/react.svg" alt="logo" />
+            <div
+              className="w-full h-full bg-gradient-to-br  from-yellow-500 to-red-500 rounded-2xl p-8 flex flex-col justify-center items-center"
+              style={{
+                background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 255, 0.5))`,
+              }}
+            >
+              <i className="fas fa-rocket text-white text-4xl mb-4"></i>
+              <img
+                src="https://www.svgrepo.com/show/439290/react.svg"
+                alt="logo"
+                className="bg-none"
+              />
               <h3 className="text-white text-lg font-bold mb-2 mt-4">
                 React Developer
               </h3>
@@ -117,10 +154,25 @@ const About = () => {
           </Tilt>
         </motion.div>
       </div>
+      <div
+    className="cursor"
+        style={{
+          left: `${cursorPos.x}px`,
+          top: `${cursorPos.y}px`,
+        }}
+      >
+        <div
+          className="cursor__inner"
+          style={{
+            transform: `translate(-50%, -50%) translate(${
+              cursorPos.x - 10
+            }px, ${cursorPos.y - 10}px)`,
+          }}
+        ></div>
+      </div>
       <StarsCanvas />
     </section>
   );
 };
-
 
 export default SectionWrapper(About, "about");
